@@ -1,0 +1,12 @@
+---
+title: "00-tidyr"
+output: html_document
+---
+
+
+```{r}
+#install.packages(tidyr)
+library(tidyr)
+```
+
+`
