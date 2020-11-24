@@ -1,0 +1,47 @@
+---
+title: "01-Data-explore"
+output: html_document
+---
+
+# Examining Clam Size data
+
+This is data that we will eventually have reproductive maturation size on.
+
+
+```{r}
+data <- read.csv("../data/CockleRepro.csv")
+
+
+knitr::kable(head(data))
+```
+
+
+I wonder if I can also just import from google docs?
+
+```{r, eval=FALSE}
+install.packages("googlesheets4")
+```
+
+```{r}
+library(googlesheets4)
+```
+
+
+
+```{r}
+datalive <- read_sheet("https://docs.google.com/spreadsheets/d/1JyDgpE1RUxDujXbEvNmZA5DYmIb_Vkoj9bfi2i__a10/edit?usp=sharing")
+knitr::kable(head(data))
+```
+
+```{r}
+library("dplyr")
+```
+
+
+Finding average height by Site
+
+```{r}
+filter(data, Site == "Blyn tidelands", Width..cm. > 6)
+```
+
+
